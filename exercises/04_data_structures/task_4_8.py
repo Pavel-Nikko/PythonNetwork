@@ -26,3 +26,13 @@
 """
 
 ip = "192.168.3.1"
+dec = ip.split(".")
+
+a = (bin(int(dec[0])))[2:]
+b = (bin(int(dec[1])))[2:]
+c = (bin(int(dec[2])))[2:]
+d = (bin(int(dec[3])))[2:]
+
+output = "{:10}{:10}{:10}{:10}\n"*2
+print(output.format(dec[0],dec[1],dec[2],dec[3],f'{int(a):08}', f'{int(b):08}',f'{int(c):08}',f'{int(d):08}'))
+
