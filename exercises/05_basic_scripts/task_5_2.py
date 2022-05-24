@@ -30,3 +30,17 @@ Out[1]: '11111111111111111111111111110000'
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 """
+network = input("Введите IP адресс и маску в формате x.x.x.x/x :")
+mask = int(network.split("/")[-1])
+result = (("1" * mask + "0" * (32 - mask)))
+dec = "{:<10}{:<10}{:<10}{:<10}".format(int(result[0:8] , 2), int(result[8:16], 2), int(result[16:24], 2), int(result[24:32], 2))
+bin = "{:10}{:10}{:10}{:10}".format(result[0:8], result[8:16], result[16:24], result[24:32])
+ip = network.split("/")[0].split(".")
+dec1 = "{:<10}{:<10}{:<10}{:<10}".format(ip[0], ip[1], ip[2], ip[3])
+bin1 = "{:08b}  {:08b}  {:08b}  {:08b}".format(int(ip[0]),int(ip[1]),int(ip[2]),int(ip[3]))
+print(("Network:\n{}\n{}\n\nMask:\n\{}\n{}\n{}").format(dec1,bin1,mask,dec,bin))
+
+#print(("Network:\n{}\n{}").format(dec1,bin1))
+#print(("Mask:\n\{}\n{}\n{}").format(mask,dec,bin))
+
+
