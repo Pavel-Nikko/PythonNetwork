@@ -24,7 +24,7 @@ $ python task_5_1b.py
 Все задания надо выполнять используя только пройденные темы. То есть эту задачу можно
 решить без использования условия if.
 """
-
+from pprint import pprint
 london_co = {
     "r1": {
         "location": "21 New Globe Walk",
@@ -48,5 +48,14 @@ london_co = {
         "ip": "10.255.0.101",
         "vlans": "10,20,30",
         "routing": True,
-    },
+    }
 }
+
+
+
+device = (str(list(london_co))).replace("[" , "(").replace("]" , ")").replace("'" , "")
+
+device1 = input("Введите имя устройства" + device + ":")
+param = (str(list(london_co[device1]))).replace("[" , "(").replace("]" , ")").replace("'" , "")
+param1 = input("Введите имя параметра" + param + ":")
+print((str(london_co[device1][param1])).replace("'" , ""))
