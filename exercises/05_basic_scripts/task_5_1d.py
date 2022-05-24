@@ -43,3 +43,10 @@ london_co = {
         "routing": True,
     },
 }
+device = (str(list(london_co))).replace("[" , "(").replace("]" , ")").replace("'" , "" )
+device1 = input("Введите имя устройства" + device + ":")
+param = (str(list(london_co[device1]))).replace("[" , "(").replace("]" , ")").replace("'" , "" )
+param1 = input("Введите имя параметра" + param + ":").lower()
+
+
+print(london_co[device1].get(param1, "Такого параметра нет"))
