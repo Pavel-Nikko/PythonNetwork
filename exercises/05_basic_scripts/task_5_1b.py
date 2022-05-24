@@ -54,8 +54,7 @@ london_co = {
 
 
 device = (str(list(london_co))).replace("[" , "(").replace("]" , ")").replace("'" , "")
-
 device1 = input("Введите имя устройства" + device + ":")
 param = (str(list(london_co[device1]))).replace("[" , "(").replace("]" , ")").replace("'" , "")
 param1 = input("Введите имя параметра" + param + ":")
-print((str(london_co[device1][param1])).replace("'" , ""))
+print(str(london_co[device1][param1]))
