@@ -12,3 +12,20 @@
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 """
+ip = input("Введите IP адрес в формате x.x.x.x :")
+ip_list = int(str(ip.split(".")[0]))
+
+for num in ip:
+    if int(str(ip.split(".")[0])) == 0 and int(str(ip.split(".")[1])) == 0 and int(str(ip.split(".")[2])) == 0 \
+            and int(str(ip.split(".")[3])) == 0:
+        print("unassigned")
+    elif  ip_list >= 0 and ip_list <= 223:
+        print("unicast")
+    elif ip_list >= 224 and ip_list <= 239:
+        print("multicast")
+    elif int(str(ip.split(".")[0])) == 255 and int(str(ip.split(".")[1])) == 255 and int(str(ip.split(".")[2])) == 255 \
+            and int(str(ip.split(".")[3])) == 255:
+        print("local broadcast")
+    else:
+        print("unused")
+    break
