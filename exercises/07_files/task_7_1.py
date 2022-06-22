@@ -30,5 +30,6 @@ with open('ospf.txt', 'r') as f:
                                    param[2],value[4],
                                    param[3],value[5],
                                    param[4],value[6]
+
                                    ))
 
