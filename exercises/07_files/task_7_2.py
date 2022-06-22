@@ -39,6 +39,9 @@ interface Ethernet0/3
 ...
 
 """
+
+from sys import argv
+print(argv)
 file = "config_sw1.txt"
 with open(file) as f:
     print(file)
