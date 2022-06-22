@@ -32,10 +32,18 @@ interface Ethernet0/2
  duplex auto
 interface Ethernet0/3
  switchport trunk encapsulation dot1q
- switchport trunk allowed vlan 100
+ switchport trunk allowed vlan 100"
  duplex auto
  switchport mode trunk
  spanning-tree portfast edge trunk
 ...
 
 """
+file = "config_sw1.txt"
+with open(file) as f:
+    print(file)
+    for line in f:
+        a = line.replace("!", " ").rstrip()
+        if len(a) != 0:
+           print(a)
+
