@@ -17,3 +17,15 @@
 """
 
 ignore = ["duplex", "alias", "configuration"]
+file = "config_sw1.txt"
+file2 = "result.txt"
+
+
+with open(file) as f, open(file2, 'w') as result:
+    for line in f:
+        words = line.split()
+        words_intersect = set(words).intersection(set(ignore))
+        if not line.startswith("!") and not words_intersect:
+            result.writelines((line.rstrip())+"\n")
+
+print(file2)
