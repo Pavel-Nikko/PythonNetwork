@@ -40,3 +40,15 @@
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 """
+from pprint import pprint
+inter1 = []
+
+with open("CAM_table.txt") as src:
+    for line in src:
+        if len(line.split()) == 4 and line.split()[0].isdigit():
+            inter = "".join(line).split()
+            vlan, mac, type, port = inter
+            inter1.append([int(vlan), mac, port])
+
+    for vlan, mac, port in sorted(inter1):
+        print(f'{vlan:<9} {mac:<20} {port}')
