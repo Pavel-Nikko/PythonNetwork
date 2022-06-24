@@ -20,3 +20,13 @@
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 """
+from pprint import pprint
+
+
+with open("CAM_table.txt") as src:
+    for line in src:
+        if len(line.split()) == 4:
+            inter = "".join(line).split()
+            vlan, mac, type, port = inter
+            if len(mac)==14:
+               print(f'{vlan:<9} {mac:<20} {port}')
